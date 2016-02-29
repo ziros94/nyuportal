@@ -16,6 +16,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True)
     posts = db.relationship('Post', backref='user', lazy='dynamic')
     comments = db.relationship('Comment', backref='user', lazy='dynamic')
+    status_updates = db.relationship('StatusUpdate', backref='user', lazy='dynamic')
 
     def __init__(self, username, password, email, firstName, lastName):
         self.username = username
@@ -37,6 +38,10 @@ signatures = db.Table('signatures',
         db.Column('post_id', db.Integer, db.ForeignKey('post.id')),
         db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
 )
+upvotes = db.Table('upvotes',
+        db.Column('comment_id', db.Integer, db.ForeignKey('comment.id')),
+        db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
+)
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)  
@@ -49,7 +54,8 @@ class Post(db.Model):
     tags = db.relationship('Tag', secondary=tags, backref=db.backref('posts', lazy='dynamic'))
     signatures = db.relationship('User', secondary=signatures, backref=db.backref('posts_signed', lazy='dynamic'))
     comments = db.relationship('Comment', backref='post', lazy='dynamic') 
-    
+    status_updates = db.relationship('StatusUpdate', backref='post', lazy='dynamic')
+
     def __init__(self, title, description):
         self.title = title
         self.description = description
@@ -80,15 +86,31 @@ class Category(db.Model):
     def __repr__(self):
         return '<Category %r>' % self.name
 
+
 class Comment(db.Model):
-    id= db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     comment_text = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, default = datetime.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
-    
+    upvotes = db.relationship('User', secondary=upvotes, backref=db.backref('upvoted_comments', lazy='dynamic'))
+
     def __init__(self, comment_text):
         self.comment_text = comment_text
 
     def __repr__(self):
         return '<Comment %r>' % self.comment_text
+
+
+class StatusUpdate(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    status_text = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, default = datetime.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+
+    def __init__(self, status_text):
+        self.status_text = status_text
+    
+    def __repr__(self):
+        return '<StatusUpdate %r>' % self.status_text
