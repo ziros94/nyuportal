@@ -27,6 +27,7 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 
+
 tags = db.Table('tags',
         db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
         db.Column('post_id', db.Integer, db.ForeignKey('post.id'))
