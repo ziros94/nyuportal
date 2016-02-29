@@ -8,5 +8,8 @@ app.config.from_object('config.DevelopmentConfig')
 
 db = SQLAlchemy(app)
 
+db.drop_all()
+db.create_all()
+
 #db.init_app(app)
 app.register_blueprint(nyu)
