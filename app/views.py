@@ -60,6 +60,18 @@ def addcategory():
     return render_template('addcategory.html', form=form)
 
 
+@nyu.route('/approve', methods=['POST'])
+def approve():
+    if request.method == 'POST':
+        rform = request.form
+        post = Post.query.get(rform["approve"])
+        post.approved = True
+        post.status = 'success'
+        db.session.add(post)
+        db.session.commit()
+    return redirect('/')    
+
+
 @nyu.route('/post/<id>')
 def post(id):
     post = Post.query.get(id)
