@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="067af8ac-d8b1-47fb-bf2b-06799b40ce89" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/home.html" afterPath="$PROJECT_DIR$/app/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/pending.html" afterPath="$PROJECT_DIR$/app/templates/pending.html" />
     </list>
     <ignored path="nyuportal.iws" />
@@ -41,8 +43,8 @@
           <file leaf-file-name="post.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/static/css/post.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.18927445">
-                  <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.26025236">
+                  <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -51,8 +53,8 @@
           <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/login.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.125">
-                  <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+                <state vertical-scroll-proportion="-14.375">
+                  <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -143,10 +145,10 @@
           <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0">
-                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="35" selection-end-column="10" />
+                <state vertical-scroll-proportion="-13.75">
+                  <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
                   <folding>
-                    <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
@@ -156,10 +158,10 @@
           <file leaf-file-name="pending.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/templates/pending.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4258675">
-                  <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+                <state vertical-scroll-proportion="0.3785489">
+                  <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
                   <folding>
-                    <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
@@ -169,8 +171,8 @@
           <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.375">
-                  <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+                <state vertical-scroll-proportion="-13.125">
+                  <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -208,9 +210,9 @@
         <option value="$PROJECT_DIR$/app/templates/newpost.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/forms.py" />
-        <option value="$PROJECT_DIR$/app/templates/home.html" />
         <option value="$PROJECT_DIR$/app/static/css/post.css" />
         <option value="$PROJECT_DIR$/app/templates/pending.html" />
+        <option value="$PROJECT_DIR$/app/templates/home.html" />
       </list>
     </option>
   </component>
@@ -748,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -774,14 +776,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -794,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/post.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18927445">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.26025236">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -808,12 +802,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="35" selection-end-column="10" />
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
           <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -821,10 +823,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/pending.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4258675">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.3785489">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
