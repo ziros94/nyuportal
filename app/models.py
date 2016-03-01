@@ -51,6 +51,7 @@ class Post(db.Model):
     status = db.Column(db.Enum('success','pending','failed'), default='pending')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
+    approved = db.Column(db.Boolean, default = False)
     tags = db.relationship('Tag', secondary=tags, backref=db.backref('posts', lazy='dynamic'))
     signatures = db.relationship('User', secondary=signatures, backref=db.backref('posts_signed', lazy='dynamic'))
     comments = db.relationship('Comment', backref='post', lazy='dynamic') 
