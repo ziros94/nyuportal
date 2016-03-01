@@ -22,6 +22,6 @@ def login():
         print user
         if user is not None:
             print "yes!"
-            return redirect(url_for('/'))
+            return redirect('/')
     return render_template('login.html', sForm=form)
 
