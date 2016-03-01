@@ -1,11 +1,14 @@
+html{
+    height:100%
+}
 body {
 	background:linear-gradient(
       rgba(0, 0, 0, 0.60),
       rgba(0, 0, 0, 0.60)
 
     ),#FFFFFF url("../images/NYUFlag_05_NickJohnson.jpg") center center scroll;
-	background-size: cover;
-	font-family: 'Source Sans Pro', sans-serif;
+    background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
 	position: relative;
 }
 

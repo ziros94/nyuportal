@@ -1,6 +1,8 @@
 /* Reset */
 
-
+html{
+   height:100% 
+}
 html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -54,8 +56,8 @@ body {
       rgba(0, 0, 0, 0.60)
 
     ),#FFFFFF url("../images/nyu-mainpage.png") center center scroll;
-	background-size: cover;
-	font-family: 'Source Sans Pro', sans-serif;
+	background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
 	position: relative;
 }
 
