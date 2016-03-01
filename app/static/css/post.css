@@ -45,3 +45,20 @@ header.container {
     font-size: 20px;
     color: white;
 }
+
+.approveForm {
+    display: inline;
+}
+
+.approveBtn {
+    cursor: pointer;
+    background:none;
+    border:none;
+    color: #ffab40;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+.approveBtn:hover {
+    color: #ffd8a6
+}

@@ -28,9 +28,9 @@
                         </div>
                         <div class="card-action">
                             <a href="post/{{post.id}}">View</a>
-                            <form action="/approve" method="POST" name="approveform">
+                            <form class="approveForm" action="/approve" method="POST" name="approveform">
                                 <input type="hidden" name="approve" value={{post.id}}>
-                                <button type="submit">Approve</button>
+                                <input class="approveBtn" type="submit" value="Approve">
                             </form>
                             <span style="float:right" class="white-text">{{post.signatures|length}} Signatures</span>
                         </div>
