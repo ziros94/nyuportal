@@ -1,3 +1,27 @@
+body {
+	background:linear-gradient(
+      rgba(0, 0, 0, 0.60),
+      rgba(0, 0, 0, 0.60)
+
+    ),#FFFFFF url("../images/NYUFlag_05_NickJohnson.jpg") center center scroll;
+	background-size: cover;
+	font-family: 'Source Sans Pro', sans-serif;
+	position: relative;
+}
+
 .postForm {
     margin-top: 100px;
+}
+
+header.container {
+    text-align: center;
+}
+
+.homeTitle {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.petitions {
+    margin-top: 50px;
 }
