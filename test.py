@@ -1,7 +1,8 @@
 import os
 from app import app, db
 from app.models import User, Post, Tag, Comment, Category, StatusUpdate
- 
+import random
+
 db.drop_all()
 db.create_all()
 
@@ -33,7 +34,10 @@ post5.category = categories[2]
 posts = [post1,post2,post3,post4,post5]
 for i in range(len(posts)):
     posts[i].user = users[i]
-    posts[i].signatures+=users
+    if posts[i].approved:
+        randint = random.randint(1,len(users))
+        rand_users = random.sample(users, randint)
+        posts[i].signatures+=rand_users
 db.session.add_all(users)
 db.session.add_all(categories)
 db.session.add_all(posts)
@@ -80,5 +84,8 @@ print "======================\n"
 print User.query.all()
 print Category.query.all()
 print Post.query.all()
+print "==== Signatures ====="
+for post in Post.query.all():
+    print str(post.signatures)
 #print Tag.query.all()
 #print Comment.query.all()
