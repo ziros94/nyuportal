@@ -2,8 +2,9 @@
 #  from app.models import User
 #  from app import db
 #
-from datetime import datetime
 from app import db
+from datetime import datetime
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +27,6 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 
-
 tags = db.Table('tags',
         db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
         db.Column('post_id', db.Integer, db.ForeignKey('post.id'))
@@ -39,6 +39,7 @@ upvotes = db.Table('upvotes',
         db.Column('comment_id', db.Integer, db.ForeignKey('comment.id')),
         db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
 )
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)  
