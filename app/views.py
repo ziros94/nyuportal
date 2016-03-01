@@ -37,3 +37,8 @@ def post():
         description = form.description.data
         #add new post here
     return render_template('post.html', form=form, categories=categories)
+
+@nyu.route('/post/<id>')
+def post(id):
+    post = Post.query.get(int(id))
+    
