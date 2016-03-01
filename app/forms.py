@@ -13,3 +13,10 @@ class newPostForm(Form):
     description = TextAreaField('Description', validators=[InputRequired(message="This field is required")])
     submit = SubmitField('Submit')
 
+
+class categoryForm(Form):
+    category = StringField('category', validators=[InputRequired(message="This field is required")])
+    submit = SubmitField('Submit')
+
+
+
