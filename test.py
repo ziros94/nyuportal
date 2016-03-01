@@ -8,17 +8,33 @@ db.create_all()
 _basedir = os.path.abspath(os.path.dirname(__file__))
 print "\n\n===================\n"
 print "Adding New User"
-user = User("a@nyu.edu", "password", "alan", "chen")
+users = [User("a@nyu.edu", "password", "alvi", "kabir"),User("b@nyu.edu", "password", "amy", "chen"),User("c@nyu.edu", "password", "sophia", "smith"),User("admin@nyu.edu", "password", "alan", "chen"),User("sarth.desai@nyu.edu", "password", "Sarth", "Desai")]
 print "Adding new Category"
-category = Category("Healthcare")
-
-db.session.add(user)
-db.session.add(category)
-db.session.commit()
+categories = [Category("Healthcare"),Category("Education"),Category("Tuition"),Category("Dining")]
 
 print 'Adding new post'
-post = Post('test_post1', 'this is a test post number 1')
-print 'Adding tags'
+post1 = Post('Terrible Dining', 'There is food poisoning epidemic because of our cafeteria food')
+post1.category = categories[3]
+post1.approved = True
+post2 = Post('Need better health center', 'School needs better health services')
+post2.category = categories[0]
+post2.approved = True
+post3 = Post('Tuition is too high', 'NYU needs to lower tuition')
+post3.category = categories[2]
+post3.approved = True
+post4 = Post('Classes are too hard', 'Professors need to make classes easier')
+post4.category = categories[1]
+post5 = Post('Tuition is too cheap', 'Tuition should be higher')
+post5.category = categories[2]
+
+posts = [post1,post2,post3,post4,post5]
+for i in range(len(posts)):
+    posts[i].user = users[i]
+db.session.add_all(users)
+db.session.add_all(categories)
+db.session.add_all(posts)
+db.session.commit()
+'''print 'Adding tags'
 tags = [Tag('healthcare'), Tag('tuition')]
 post.tags+=tags
 post.user = user
@@ -55,10 +71,10 @@ for signature in post.signatures:
 comment = Comment.query.first()
 for upvote in  comment.upvotes:
     print "Upvoted by User: " + str(upvote)
-print post.title + "'s Category: " + str(post.category)
+print post.title + "'s Category: " + str(post.category)'''
 print "======================\n"
 print User.query.all()
 print Category.query.all()
 print Post.query.all()
-print Tag.query.all()
-print Comment.query.all()
+#print Tag.query.all()
+#print Comment.query.all()

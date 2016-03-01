@@ -13,6 +13,7 @@ class User(db.Model):
     title = db.Column(db.Enum('student', 'council', 'admin'), default='student')
     password = db.Column(db.String(54))
     email = db.Column(db.String(120), unique=True)
+    is_admin = db.Column(db.Boolean, default=False)
     posts = db.relationship('Post', backref='user', lazy='dynamic')
     comments = db.relationship('Comment', backref='user', lazy='dynamic')
     status_updates = db.relationship('StatusUpdate', backref='user', lazy='dynamic')

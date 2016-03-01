@@ -8,8 +8,11 @@ class signinForm(Form):
     submit = SubmitField('Login')
 
 
+<<<<<<< HEAD
 class newPostForm(Form):
     title = StringField('Title', validators=[InputRequired(message="This field is required")])
     description = TextAreaField('Description', validators=[InputRequired(message="This field is required")])
     submit = SubmitField('Submit')
+=======
+>>>>>>> bf81e1872da22fedea11b1b829a1344cc08f738f
 
