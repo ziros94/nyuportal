@@ -28,10 +28,11 @@ def login():
     return render_template('login.html', sForm=form)
 
 
-@nyu.route('/post', methods=['GET', 'POST'])
+@nyu.route('/newpost', methods=['GET', 'POST'])
 def post():
     form = newPostForm(request.form)
     categories = Category.query.all()
+    print categories
     if form.validate_on_submit():
         title = form.title.data
         description = form.description.data
