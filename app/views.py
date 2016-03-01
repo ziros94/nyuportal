@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, request, redirect, url_for
-from .models import User
+from .models import User, Post, Tag, Comment, Category, StatusUpdate
 from .forms import signinForm
 
 nyu = Blueprint("nyu", __name__)
@@ -7,7 +7,8 @@ nyu = Blueprint("nyu", __name__)
 
 @nyu.route('/')
 def home():
-    return render_template('home.html')
+    posts = Post.query.filter_by(approved=True)
+    return render_template('home.html', posts=posts)
 
 
 #TODO fix password checking
@@ -21,3 +22,4 @@ def login():
         if user is not None:
             return redirect(url_for('/'))
     return render_template('login.html', sForm=form)
+
