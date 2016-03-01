@@ -18,6 +18,8 @@ def login():
         email = form.email.data
         password = form.password.data
         user = User.query.filter_by(email=email, password=password).first()
+        print user
         if user is not None:
+            print "yes!"
             return redirect(url_for('/'))
     return render_template('login.html', sForm=form)
