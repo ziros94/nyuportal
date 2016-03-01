@@ -18,8 +18,9 @@
                 <div class="col s12 m6 l4">
                     <div class="card deep-purple">
                         <div class="card-content white-text">
-                            <span class="card-title">{{post.title}}</span><span style="float:right">{{post.date_posted.strftime('%Y-%m-%d')}}</span>
+                            <span style="float:right">{{post.date_posted.strftime('%Y-%m-%d')}}</span>
                             <br>
+                            <span class="card-title">{{post.title}}</span>                            <br>
                             <div class="chip">
                                 {{ post.category.name }}
                             </div>
