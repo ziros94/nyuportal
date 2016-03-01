@@ -11,8 +11,8 @@ def home():
 
 
 #TODO fix password checking
-@nyu.route('/signin', methods=['GET', 'POST'])
-def signin():
+@nyu.route('/login', methods=['GET', 'POST'])
+def login():
     form = signinForm(request.form)
     if form.validate_on_submit():
         email = form.email.data

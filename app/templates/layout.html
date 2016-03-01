@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<title>NYU Submissions Portal</title>
+        {% block css %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        {% endblock %}
 	</head>
 	<body>
 		<nav class="purple darken-4" role="navigation">
@@ -18,10 +20,8 @@
             </div>
         </nav>
 		<div class="container">
-            <div class="container">
-			    {% block content %}
-			    {% endblock %}
-            </div>
+            {% block content %}
+            {% endblock %}
 		</div>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
