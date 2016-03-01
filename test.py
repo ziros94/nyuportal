@@ -23,9 +23,10 @@ tags = [Tag('healthcare'), Tag('tuition')]
 post.tags+=tags
 post.user = user
 post.category = category
+post.approved=True
 comment = Comment("test comment")
 comment2 = Comment("test comment")
-user = User.query.filter_by(username='alchen').first()
+user = User.query.filter_by(email='a@nyu.edu').first()
 post = Post.query.filter_by(user_id=user.id).first()
 post.comments.append(comment)
 post.comments.append(comment2)
@@ -40,7 +41,7 @@ db.session.commit()
 print "User Title: " + user.title
 print "Post Title: " + post.title
 for comment in user.comments:
-    print user.username + "'s Comment: " + str(comment)
+    print user.email + "'s Comment: " + str(comment)
     print comment.user.id
 for comment in post.comments:
     print post.title + "'s Comment: " + str(comment)
