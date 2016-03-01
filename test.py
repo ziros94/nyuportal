@@ -16,12 +16,15 @@ print 'Adding new post'
 post1 = Post('Terrible Dining', 'There is food poisoning epidemic because of our cafeteria food')
 post1.category = categories[3]
 post1.approved = True
+post1.status = 'success'
 post2 = Post('Need better health center', 'School needs better health services')
 post2.category = categories[0]
 post2.approved = True
+post2.status = 'success'
 post3 = Post('Tuition is too high', 'NYU needs to lower tuition')
 post3.category = categories[2]
 post3.approved = True
+post3.status = 'success'
 post4 = Post('Classes are too hard', 'Professors need to make classes easier')
 post4.category = categories[1]
 post5 = Post('Tuition is too cheap', 'Tuition should be higher')

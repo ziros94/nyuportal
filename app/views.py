@@ -12,7 +12,7 @@ def home():
 
 @nyu.route('/pending')
 def pending():
-    posts = Post.query.filter_by(approved=False)
+    posts = Post.query.filter_by(approved=False, status='pending')
     return render_template('pending.html', posts=posts)
 
 #TODO fix password checking
@@ -38,3 +38,8 @@ def post():
         description = form.description.data
         #add new post here
     return render_template('post.html', form=form, categories=categories)
+
+@nyu.route('/post/<id>')
+def post(id):
+    post = Post.query.get(int(id))
+    
