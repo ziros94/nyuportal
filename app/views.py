@@ -29,7 +29,7 @@ def login():
 
 
 @nyu.route('/newpost', methods=['GET', 'POST'])
-def post():
+def newpost():
     form = newPostForm(request.form)
     categories = Category.query.all()
     print categories
