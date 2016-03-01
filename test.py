@@ -33,6 +33,7 @@ post5.category = categories[2]
 posts = [post1,post2,post3,post4,post5]
 for i in range(len(posts)):
     posts[i].user = users[i]
+    posts[i].signatures+=users
 db.session.add_all(users)
 db.session.add_all(categories)
 db.session.add_all(posts)
