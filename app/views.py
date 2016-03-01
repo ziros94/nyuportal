@@ -41,5 +41,7 @@ def newpost():
 
 @nyu.route('/post/<id>')
 def post(id):
-    post = Post.query.get(int(id))
-    
+    print int(id)
+    post = Post.query.get(id)
+    print post
+    return render_template('post.html', post=post) 
