@@ -10,6 +10,10 @@ def home():
     posts = Post.query.filter_by(approved=True)
     return render_template('home.html', posts=posts)
 
+@nyu.route('/pending')
+def pending():
+    posts = Post.query.filter_by(approved=False)
+    return render_template('pending.html', posts=posts)
 
 #TODO fix password checking
 @nyu.route('/login', methods=['GET', 'POST'])

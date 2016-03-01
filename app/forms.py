@@ -8,5 +8,4 @@ class signinForm(Form):
     submit = SubmitField('Login')
 
 
-class newPostForm(Form):
 
