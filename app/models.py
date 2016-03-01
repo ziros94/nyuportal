@@ -11,17 +11,15 @@ class User(db.Model):
     firstName = db.Column(db.String(60))
     lastName = db.Column(db.String(60))
     title = db.Column(db.Enum('student', 'council', 'admin'), default='student')
-    username = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(54))
     email = db.Column(db.String(120), unique=True)
     posts = db.relationship('Post', backref='user', lazy='dynamic')
     comments = db.relationship('Comment', backref='user', lazy='dynamic')
     status_updates = db.relationship('StatusUpdate', backref='user', lazy='dynamic')
 
-    def __init__(self, username, password, email, firstName, lastName):
-        self.username = username
-        self.password = password
+    def __init__(self, email, password, firstName, lastName):
         self.email = email
+        self.password = password
         self.firstName = firstName
         self.lastName = lastName
 
