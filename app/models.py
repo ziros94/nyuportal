@@ -24,7 +24,7 @@ class User(db.Model):
         self.lastName = lastName
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.email
 
 
 tags = db.Table('tags',
