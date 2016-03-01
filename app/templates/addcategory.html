@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row container">
+    <form action="" method="POST" class="col s12">
+        {{form.hidden_tag()}}
+        <div class="row">
+            <div class="input-field offset-s4 col s4 offset-s4">
+                {{ form.category(type="text", id="category") }}
+                {{ form.category.label(for="category") }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field offset-s4 col s4 offset-s4">
+                {{ form.submit(type="submit", class="btn waves-effect waves-light right", value="Submit") }}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

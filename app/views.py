@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, request, redirect, url_for
 from .models import User, Post, Tag, Comment, Category, StatusUpdate
-from .forms import signinForm, newPostForm
+from .forms import signinForm, newPostForm, categoryForm
 from app import db
 nyu = Blueprint("nyu", __name__)
 
@@ -46,6 +46,19 @@ def newpost():
 
         return redirect('/pending')
     return render_template('newpost.html', form=form, categories=categories)
+
+
+@nyu.route('/addcategory', methods=['GET', 'POST'])
+def addcategory():
+    form = categoryForm(request.form)
+    if form.validate_on_submit():
+        category = Category(form.category.data)
+        #print category
+        db.session.add(category)
+        db.session.commit()
+        return redirect('/home')
+    return render_template('addcategory.html', form=form)
+
 
 @nyu.route('/post/<id>')
 def post(id):
