@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, request, redirect, url_for
 from .models import User, Post, Tag, Comment, Category, StatusUpdate
-from .forms import signinForm
+from .forms import signinForm, newPostForm
 
 nyu = Blueprint("nyu", __name__)
 
@@ -19,9 +19,17 @@ def login():
         email = form.email.data
         password = form.password.data
         user = User.query.filter_by(email=email, password=password).first()
-        print user
         if user is not None:
-            print "yes!"
             return redirect('/')
     return render_template('login.html', sForm=form)
 
+
+@nyu.route('/post', methods=['GET', 'POST'])
+def post():
+    form = newPostForm(request.form)
+    categories = Category.query.all()
+    if form.validate_on_submit():
+        title = form.title.data
+        description = form.description.data
+        #add new post here
+    return render_template('post.html', form=form, categories=categories)
