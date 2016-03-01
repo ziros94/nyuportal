@@ -32,8 +32,8 @@ def login():
 def newpost():
     form = newPostForm(request.form)
     categories = Category.query.all()
-    print categories
     if form.validate_on_submit():
+        print request.form
         title = form.title.data
         description = form.description.data
         #add new post here
