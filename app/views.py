@@ -12,7 +12,7 @@ def home():
 
 @nyu.route('/pending')
 def pending():
-    posts = Post.query.filter_by(approved=False)
+    posts = Post.query.filter_by(approved=False, status='pending')
     return render_template('pending.html', posts=posts)
 
 #TODO fix password checking
