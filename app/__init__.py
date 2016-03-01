@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-#from .models import db
 from .views import nyu
 
 app = Flask(__name__)

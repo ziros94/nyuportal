@@ -8,7 +8,7 @@ db.create_all()
 _basedir = os.path.abspath(os.path.dirname(__file__))
 print "\n\n===================\n"
 print "Adding New User"
-user = User("alchen", "password", "a@nyu.edu", "alan", "chen")
+user = User("a@nyu.edu", "password", "alan", "chen")
 print "Adding new Category"
 category = Category("Healthcare")
 

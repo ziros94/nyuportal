@@ -20,4 +20,4 @@ def signin():
         user = User.query.filter_by(email=email, password=password).first()
         if user is not None:
             return redirect(url_for('/'))
-    return render_template('login.html', form=form)
+    return render_template('login.html', sForm=form)

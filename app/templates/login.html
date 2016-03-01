@@ -1,2 +1,39 @@
 {% extends "layout.html" %}
-<h1>Login Page</h1>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In form</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div id="main" class="container">
+
+	<form class="login-form overlay wpl-track-me" name="loginform" id="loginform" action="" method="POST" >
+		{{ sForm.hidden_tag() }}
+        <p class="login-username">
+            {{ sForm.email.label(for="user_login") }}
+            {{ sForm.email(type="text", id="user_login", class="input", value="", size="20", placeholder="Email") }}
+		</p>
+		<p class="login-password">
+            {{ sForm.password.label(for="user_pass") }}
+            {{ sForm.password(type="password", id="user_pass", class="input", value="", size="20", placeholder="Password") }}
+		</p>
+		<p class="login-remember">
+			<label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+		</p>
+		<p class="login-submit">
+            {{ sForm.submit(type="submit", id="wp-submit", class="button-primary", value="Login") }}
+		</p>
+		<p>
+			<a class="login-forget" href="#" title="Password Lost and Found">Lost your password?</a>
+		</p>
+	</form>
+	<script type="text/javascript">
+</script>
+ </div>
+</body>
+</html>
