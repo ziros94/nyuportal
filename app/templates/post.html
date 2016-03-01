@@ -1,8 +1,25 @@
 {% extends "layout.html" %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/css/post.css">
+{% endblock %}
+
 {% block content %}
-<div class="container">
-    <h1>{{post.title}}</h1>
-    <h2>{{post.description}}</h2>
-    <h3>{{post.signatures|length}} Signatures</h3>
-</div>
+    <div class="container">
+        <div class="post_content row">
+            <div class="col s8 offset-s2">
+                <h2 class="postTitle">{{post.title}}</h2>
+                <span style="float:right" class="white-text">{{post.signatures|length}} Signatures</span>
+                <p class="white-text">{{post.date_posted.strftime('%Y-%m-%d')}}</p>
+                <a class="waves-effect waves-light btn right">Sign</a>
+                <div class="chip">
+                    {{ post.category.name }}
+                </div>
+                <hr>
+                <p class="post_desc">{{post.description}}</p>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
