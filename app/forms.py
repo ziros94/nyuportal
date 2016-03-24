@@ -15,7 +15,7 @@ class newPostForm(Form):
 
 
 class categoryForm(Form):
-    category = StringField('category', validators=[InputRequired(message="This field is required")])
+    category = StringField('Category', validators=[InputRequired(message="This field is required")])
     submit = SubmitField('Submit')
 
 

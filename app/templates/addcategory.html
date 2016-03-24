@@ -11,6 +11,16 @@
         </div>
         <div class="row">
             <div class="input-field offset-s4 col s4 offset-s4">
+                <select name="coms">
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for com in committees  %}
+                        <option value="{{com.id}}">{{com.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field offset-s4 col s4 offset-s4">
                 {{ form.submit(type="submit", class="btn waves-effect waves-light right", value="Submit") }}
             </div>
         </div>

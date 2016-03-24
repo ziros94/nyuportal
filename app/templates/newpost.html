@@ -29,14 +29,20 @@
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <select name="category">
+                    <select name="category" id="cat">
                       <option value="" disabled selected>Choose your option</option>
                       {% for cat in categories %}
-                        <div><option value="{{ cat.name }}">{{ cat.name }}</option></div>
+                        <div><option value="{{ cat.id }}">{{ cat.name }}</option></div>
                       {% endfor %}
                     </select>
-                    <label>Materialize Select</label>
+                    <label>Category</label>
                   </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="com" type="text" disabled/>
+                        <label>Committee</label>
+                    </div>
                 </div>
                 <div class="row">
                     {{ form.submit(type="submit", class="btn waves-effect waves-light right", value="Submit") }}
@@ -44,4 +50,28 @@
             </form>
           </div>
         </div>
+        <script>
+            $("#com").val(function(){
+                var category = $("#cat").val();
+                var categories = {{categories_json|safe }};
+                console.log(category);
+                categories.forEach(function(cat){
+                    if (cat.id == category){
+                        category = cat.name;
+                        return;
+                    }
+                });
+                return category;
+            });
+            $("#cat").change(function(){
+                var category = $("#cat").val();
+                var categories = {{categories_json|safe }};
+                categories.forEach(function(cat){
+                    if (cat.id == category){
+                        $("#com").val(cat.name);
+                        return;
+                    }
+                });
+            });
+        </script>
 {% endblock %}

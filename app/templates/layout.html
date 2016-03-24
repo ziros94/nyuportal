@@ -5,6 +5,7 @@
         {% block css %}
         <link rel="stylesheet" href='../static/css/normalize.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         {% endblock %}
 	</head>
 	<body>
@@ -26,7 +27,6 @@
         </nav>
         {% block content %}
         {% endblock %}
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
         <script>
           $(document).ready(function() {

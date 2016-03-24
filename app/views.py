@@ -1,7 +1,8 @@
 from flask import render_template, Blueprint, request, redirect, url_for
-from .models import User, Post, Tag, Comment, Category, StatusUpdate
+from .models import User, Post, Tag, Comment, Category, Committee, StatusUpdate
 from .forms import signinForm, newPostForm, categoryForm
 from app import db
+import json
 nyu = Blueprint("nyu", __name__)
 
 
@@ -32,11 +33,13 @@ def login():
 def newpost():
     form = newPostForm(request.form)
     categories = Category.query.all()
+    categories_json = map(lambda x: {"name":str(x.committee.name),"id":x.id}, categories)
+    print categories_json
     if form.validate_on_submit():
         rForm = request.form
         title = form.title.data
         description = form.description.data
-        category = Category(rForm["category"])
+        category = Category.query.get(rForm["category"])
 
         post = Post(title, description)
         post.category = category
@@ -45,19 +48,23 @@ def newpost():
         db.session.commit()
 
         return redirect('/pending')
-    return render_template('newpost.html', form=form, categories=categories)
+    return render_template('newpost.html', form=form, categories=categories, categories_json=categories_json)
 
 
 @nyu.route('/addcategory', methods=['GET', 'POST'])
 def addcategory():
     form = categoryForm(request.form)
+    committees = Committee.query.all()
     if form.validate_on_submit():
         category = Category(form.category.data)
+        rForm = request.form
+        committee = Committee.query.get(rForm["coms"])
+        committee.categories.append(category)
         #print category
         db.session.add(category)
         db.session.commit()
-        return redirect('/home')
-    return render_template('addcategory.html', form=form)
+        return redirect('/')
+    return render_template('addcategory.html', form=form, committees=committees)
 
 
 @nyu.route('/approve', methods=['POST'])

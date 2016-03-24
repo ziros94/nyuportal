@@ -75,10 +75,23 @@ class Tag(db.Model):
         return '<Tag %r>' % self.name
    
 
+class Committee(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30))
+    categories = db.relationship('Category', backref='committee', lazy='dynamic')
+
+    def __init__(self, name):
+        self.name = name
+    
+    def __repr__(self):
+        return '<Committee %r>' % self.name
+
+
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     posts = db.relationship('Post', backref='category', lazy='dynamic')
+    committee_id = db.Column(db.Integer, db.ForeignKey('committee.id'))
 
     def __init__(self, name):
         self.name = name
